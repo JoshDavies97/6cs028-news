@@ -1,0 +1,116 @@
+
+*** These modified files were found in JOE when it aborted on Tue Mar  1 11:48:56 2022
+*** JOE was aborted because the terminal closed
+
+*** File '/home/stud/0/1827197/public_html/project-root/app/.git/COMMIT_EDITMSG'
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: Joshua Davies <1827197@csl-student.wlv.ac.uk>
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   .htaccess
+#	new file:   Common.php
+#	new file:   Config/App.php
+#	new file:   Config/Autoload.php
+#	new file:   Config/Boot/development.php
+#	new file:   Config/Boot/production.php
+#	new file:   Config/Boot/testing.php
+#	new file:   Config/CURLRequest.php
+#	new file:   Config/Cache.php
+#	new file:   Config/Constants.php
+#	new file:   Config/ContentSecurityPolicy.php
+#	new file:   Config/Cookie.php
+#	new file:   Config/Database.php
+#	new file:   Config/DocTypes.php
+#	new file:   Config/Email.php
+#	new file:   Config/Encryption.php
+#	new file:   Config/Events.php
+#	new file:   Config/Exceptions.php
+#	new file:   Config/Feature.php
+#	new file:   Config/Filters.php
+#	new file:   Config/ForeignCharacters.php
+#	new file:   Config/Format.php
+#	new file:   Config/Generators.php
+#	new file:   Config/Honeypot.php
+#	new file:   Config/Images.php
+#	new file:   Config/Kint.php
+#	new file:   Config/Logger.php
+#	new file:   Config/Migrations.php
+#	new file:   Config/Mimes.php
+#	new file:   Config/Modules.php
+#	new file:   Config/Pager.php
+#	new file:   Config/Paths.php
+#	new file:   Config/Publisher.php
+#	new file:   Config/Routes.php
+#	new file:   Config/Security.php
+#	new file:   Config/Services.php
+#	new file:   Config/Toolbar.php
+#	new file:   Config/UserAgents.php
+#	new file:   Config/Validation.php
+#	new file:   Config/View.php
+#	new file:   Controllers/Ajax.php
+#	new file:   Controllers/Apis.php
+#	new file:   Controllers/BaseController.php
+#	new file:   Controllers/Home.php
+#	new file:   Controllers/LocalNews.php
+#	new file:   Controllers/News.php
+#	new file:   Controllers/Pages.php
+#	new file:   Controllers/UkNews.php
+#	new file:   Controllers/WorldNews.php
+#	new file:   Database/Migrations/.gitkeep
+#	new file:   Database/Seeds/.gitkeep
+#	new file:   Filters/.gitkeep
+#	new file:   Helpers/.gitkeep
+#	new file:   Language/.gitkeep
+#	new file:   Language/en/Validation.php
+#	new file:   Libraries/.gitkeep
+#	new file:   Models
+#	new file:   ThirdParty/.gitkeep
+#	new file:   Views/apis/weather.php
+#	new file:   Views/apis/wikipedia.php
+#	new file:   Views/errors/cli/error_404.php
+#	new file:   Views/errors/cli/error_exception.php
+#	new file:   Views/errors/cli/production.php
+#	new file:   Views/errors/html/debug.css
+#	new file:   Views/errors/html/debug.js
+#	new file:   Views/errors/html/error_404.php
+#	new file:   Views/errors/html/error_exception.php
+#	new file:   Views/errors/html/production.php
+#	new file:   Views/localNews
+#	new file:   Views/news/create.php
+#	new file:   Views/news/overview.php
+#	new file:   Views/news/view.php
+#	new file:   Views/pages/about.php
+#	new file:   Views/pages/home.php
+#	new file:   Views/templates/footer.php
+#	new file:   Views/templates/header.php
+#	new file:   Views/templates/localNewsHeader.php
+#	new file:   Views/templates/ukNewsHeader.php
+#	new file:   Views/templates/worldNewsHeader.php
+#	new file:   Views/ukNews
+#	new file:   Views/welcome_message.php
+#	new file:   Views/worldNews/worldNewsOverview.php
+#	new file:   Views/worldNews/worldNewsView.php
+#	new file:   index.html
+#
+# Changes not staged for commit:
+#	modified:   Models (modified content, untracked content)
+#	modified:   Views/localNews (modified content, untracked content)
+#	modified:   Views/ukNews (untracked content)
+#
+
+*** File '(Unnamed)'
+/home/stud/0/1827197/public_html/6CS028-test/.git/COMMIT_EDITMSG
+/home/stud/0/1827197/public_html/project-root/app/.git/COMMIT_EDITMSG
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc

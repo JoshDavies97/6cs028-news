@@ -1,0 +1,1 @@
+<p><?= esc($ukNews['body']) ?></p>
