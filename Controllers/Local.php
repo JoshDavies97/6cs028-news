@@ -51,7 +51,7 @@ class Local extends BaseController {
 	public function create() {
 		
 		// grab the model for database access
-		$model = model(LocalNewsModel::class);
+		$model = model(LocalModel::class);
 		
 		// if the form has been submitted
 		if($this->request->getMethod() === 'post' && $this->validate([
@@ -66,12 +66,12 @@ class Local extends BaseController {
 				]);
 				
 				// redirect to home screen if a new article is created
-				return redirect()->to('localnews');
+				return redirect()->to('local');
 				
 		// this is called before the form is submitted		
 		} else {
 			echo view('templates/localNewsHeader', ['title' => 'Create a news item']);
-			echo view('localNews/create');
+			echo view('local/create');
 			echo view('templates/footer');
 		}
 	}

@@ -29,29 +29,33 @@ $routes->setAutoRoute(true);
  * --------------------------------------------------------------------
  */
 
+// routes for news
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-
-$routes->match(['get', 'post'], 'news/create', 'News::create');
-
-$routes->match(['get', 'post'], 'localnews/create', 'localnews::create');
-
-// shortens the url e.g. news/xyz => news/view/xyz
-$routes->get('news/(:segment)', 'News::view/$1');
-
-// shortens the url e.g. worldNews/xyz => worldNews/view/xyz
-//$routes->get('worldNews/(:segment)', 'worldNews::view/$1');
 
 // gets rid of index e.g. news => news/index
 // gets rid of news/view/ in overview.php
 $routes->get('news', 'News::index');
 
-// gets rid of index e.g. worldNews => worldNews/index
-$routes->get('world', 'World::index');
+// shortens the url e.g. news/xyz => news/view/xyz
+$routes->get('news/(:segment)', 'News::view/$1');
 
-// shortens the url e.g. uk/xyz => Uk/view/xyz
-$routes->get('world/(:segment)', 'World::view/$1');
+$routes->match(['get', 'post'], 'news/create', 'News::create');
+
+
+// routes for local
+$routes->match(['get', 'post'], 'local/create', 'Local::create');
+
+// gets rid of index e.g. news => local/index
+$routes->get('local', 'Local::index');
+
+// shortens the url e.g. news/xyz => Local/view/xyz
+$routes->get('local/(:segment)', 'Local::view/$1');
+
+
+// routes for uk
+$routes->match(['get', 'post'], 'uk/create', 'Uk::create');
 
 // gets rid of index e.g. uk => uk/index
 $routes->get('uk', 'Uk::index');
@@ -59,11 +63,15 @@ $routes->get('uk', 'Uk::index');
 // shortens the url e.g. uk/xyz => Uk/view/xyz
 $routes->get('uk/(:segment)', 'Uk::view/$1');
 
-// gets rid of index e.g. news => localNews/index
-$routes->get('local', 'Local::index');
 
-// shortens the url e.g. news/xyz => Local/view/xyz
-$routes->get('local/(:segment)', 'Local::view/$1');
+// routes for world
+$routes->match(['get', 'post'], 'world/create', 'World::create');
+
+// gets rid of index e.g. worldNews => world/index
+$routes->get('world', 'World::index');
+
+// shortens the url e.g. uk/xyz => World/view/xyz
+$routes->get('world/(:segment)', 'World::view/$1');
 
 
 

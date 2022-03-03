@@ -1,6 +1,6 @@
 <!-- overview for local -->
 
-<a href="<?=base_url()?>/localNews/create">Create Article</a><br /><br /> 
+<a href="<?=base_url()?>/local/create">Create Article</a><br /><br /> 
 
 <?php if (! empty($local) && is_array($local)): ?>
 

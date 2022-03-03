@@ -1,3 +1,7 @@
+<!-- overview for world -->
+
+<a href="<?=base_url()?>/world/create">Create Article</a><br /><br /> 
+
 <?php if (! empty($world) && is_array($world)): ?>
 
 	<?php foreach ($world as $news_item): ?>

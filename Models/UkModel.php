@@ -14,6 +14,7 @@ class UkModel extends Model {
 			return $this->findAll();
 		}
 		
+		// if slug is provided, select it
 		return $this->where(['slug' => $slug])->first();
 	}
 }

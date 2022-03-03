@@ -1,5 +1,7 @@
 <!-- overview for uk -->
 
+<a href="<?=base_url()?>/uk/create">Create Article</a><br /><br /> 
+
 <?php if (! empty($uk) && is_array($uk)): ?>
 
 	<?php foreach ($uk as $news_item): ?>
@@ -8,7 +10,7 @@
 	
 	<div class="main">
 		<?= esc($news_item['body']) ?>
-    </div>
+    </div> 
 	<p><a href="<?=base_url()?>/uk/<?= esc($news_item['slug'], 'url') ?>">View article</a></p>
 	
 	<?php endforeach ?>

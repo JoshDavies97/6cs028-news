@@ -6,7 +6,7 @@
 <!--- function is used to report errors related to form validation --->
 <?= service('validation')->listErrors() ?>
 
-<form action="<?=base_url()?>/localNews/create" method="post">
+<form action="<?=base_url()?>/uk/create" method="post">
 	
 	<!--- function creates a hidden input with a CSRF token that helps protect against common attacks --->
 	<?= csrf_field() ?>
