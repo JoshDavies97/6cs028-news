@@ -1,13 +1,15 @@
-<?php if (! empty($worldNews) && is_array($worldNews)): ?>
+<!-- overview for uk -->
 
-	<?php foreach ($worldNews as $news_item): ?>
+<?php if (! empty($uk) && is_array($uk)): ?>
+
+	<?php foreach ($uk as $news_item): ?>
 	
 	<h3><?= esc($news_item['title']) ?></h3>
 	
 	<div class="main">
 		<?= esc($news_item['body']) ?>
     </div>
-	<p><a href="<?=base_url()?>/worldNews/view/<?= esc($news_item['slug'], 'url') ?>">View article</a></p>
+	<p><a href="<?=base_url()?>/uk/<?= esc($news_item['slug'], 'url') ?>">View article</a></p>
 	
 	<?php endforeach ?>
 

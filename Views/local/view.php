@@ -1,0 +1,1 @@
+<p><?= esc($local['body']) ?></p>

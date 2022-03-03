@@ -3,15 +3,15 @@ namespace App\Models;
 	
 use CodeIgniter\Model;
 	
-class LocalNewsModels extends Model {
+class WorldModel extends Model {
 	
-	// 'localNews' = name of database table
-	protected $table = 'localNews';
+	// 'World' = name of database table
+	protected $table = 'World';
 	
 	// the fields inside the table the model is allowed to update
 	protected $allowedFields = ['title', 'slug', 'body'];
 	
-	public function getLocalNews($slug = false) {
+	public function getWorld($slug = false) {
 		if($slug === false) {
 			return $this->findAll();
 		}
@@ -20,4 +20,3 @@ class LocalNewsModels extends Model {
 	}
 }
 ?>
-

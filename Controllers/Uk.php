@@ -1,26 +1,26 @@
 <?php
 namespace App\Controllers;
 	
-use App\Models\UkNewsModel;
+use App\Models\UkModel;
 
 // this is our controller
-class UkNews extends BaseController {
+class Uk extends BaseController {
 		
 	// lists all news items
 	public function index() {
 		
 		// instantiate the model
-		$model = model(UkNewsModel::class);
+		$model = model(UkModel::class);
 		
 		// the data is stored in an object
 		$data = [
-			'ukNews' => $model->getUKNews(), // get the news items
+			'uk' => $model->getUk(), // get the news items
 			'title' => 'UK News', // page title
 		];
 		
 		// loads the views and passes the data objects
 		echo view('templates/ukNewsHeader', $data);
-		echo view('ukNews/ukNewsOverview', $data);
+		echo view('uk/overview', $data);
 		echo view('templates/footer', $data);
 	}
 		
@@ -28,22 +28,22 @@ class UkNews extends BaseController {
 	public function view($slug = null) {
 		
 		// grab the model
-		$model = model(UkNewsModel::class);
+		$model = model(UkModel::class);
 		
 		// load single news item from model pass in the slug 
-		$data['ukNews'] = $model->getUkNews($slug);
+		$data['uk'] = $model->getUk($slug);
 		
 		// deal with case where the slug doesn't exist
-		if(empty($data['ukNews'])){
+		if(empty($data['uk'])){
 			throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the news item: ' . $slug);
 		}
 		
 		// specify the title
-		$data['title'] = $data['ukNews']['title'];
+		$data['title'] = $data['uk']['title'];
 		
 		// loads the views and passes the data objects
 		echo view('templates/ukNewsHeader', $data);
-		echo view('ukNews/ukNewsView', $data);
+		echo view('uk/view', $data);
 		echo view('templates/footer', $data);
 	}
 }

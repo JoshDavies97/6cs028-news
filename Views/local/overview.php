@@ -1,15 +1,17 @@
+<!-- overview for local -->
+
 <a href="<?=base_url()?>/localNews/create">Create Article</a><br /><br /> 
 
-<?php if (! empty($localNews) && is_array($localNews)): ?>
+<?php if (! empty($local) && is_array($local)): ?>
 
-	<?php foreach ($localNews as $news_item): ?>
+	<?php foreach ($local as $news_item): ?>
 	
 	<h3><?= esc($news_item['title']) ?></h3>
 	
 	<div class="main">
 		<?= esc($news_item['body']) ?>
     </div>
-	<p><a href="<?=base_url()?>/localNews/view/<?= esc($news_item['slug'], 'url') ?>">View article</a></p>
+	<p><a href="<?=base_url()?>/local/<?= esc($news_item['slug'], 'url') ?>">View article</a></p>
 	
 	<?php endforeach ?>
 

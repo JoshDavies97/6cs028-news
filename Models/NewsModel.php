@@ -6,7 +6,6 @@ use CodeIgniter\Model;
 class NewsModel extends Model {
 	protected $table = 'News'; // 'News' = name of database table (Alix)
 
-
 	// this function returns news items from the database
 	public function getNews($slug = false) {
 	

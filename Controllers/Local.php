@@ -1,26 +1,26 @@
 <?php
 namespace App\Controllers;
 	
-use App\Models\LocalNewsModel;
+use App\Models\LocalModel;
 
 // this is our controller
-class LocalNews extends BaseController {
+class Local extends BaseController {
 		
 	// lists all news items
 	public function index() {
 		
 		// instantiate the model
-		$model = model(LocalNewsModel::class);
+		$model = model(LocalModel::class);
 		
 		// the data is stored in an object
 		$data = [
-			'localNews' => $model->getLocalNews(), // get the news items
+			'local' => $model->getLocal(), // get the news items
 			'title' => 'Local News', // page title
 		];
 		
 		// loads the views and passes the data objects
 		echo view('templates/localNewsHeader', $data);
-		echo view('localNews/localNewsOverview', $data);
+		echo view('local/overview', $data);
 		echo view('templates/footer', $data);
 	}
 		
@@ -28,22 +28,22 @@ class LocalNews extends BaseController {
 	public function view($slug = null) {
 		
 		// grab the model
-		$model = model(LocalNewsModel::class);
+		$model = model(LocalModel::class);
 		
 		// load single news item from model pass in the slug 
-		$data['localNews'] = $model->getLocalNews($slug);
+		$data['local'] = $model->getLocal($slug);
 		
 		// deal with case where the slug doesn't exist
-		if(empty($data['localNews'])){
+		if(empty($data['local'])){
 			throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the news item: ' . $slug);
 		}
 		
 		// specify the title
-		$data['title'] = $data['localNews']['title'];
+		$data['title'] = $data['local']['title'];
 		
 		// loads the views and passes the data objects
 		echo view('templates/localNewsHeader', $data);
-		echo view('localNews/localNewsView', $data);
+		echo view('local/view', $data);
 		echo view('templates/footer', $data);
 	}
 	

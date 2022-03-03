@@ -48,13 +48,22 @@ $routes->get('news/(:segment)', 'News::view/$1');
 $routes->get('news', 'News::index');
 
 // gets rid of index e.g. worldNews => worldNews/index
-$routes->get('worldnews', 'worldnews::index');
+$routes->get('world', 'World::index');
 
-// gets rid of index e.g. ukNews => ukNews/index
-$routes->get('uknews', 'uknews::index');
+// shortens the url e.g. uk/xyz => Uk/view/xyz
+$routes->get('world/(:segment)', 'World::view/$1');
+
+// gets rid of index e.g. uk => uk/index
+$routes->get('uk', 'Uk::index');
+
+// shortens the url e.g. uk/xyz => Uk/view/xyz
+$routes->get('uk/(:segment)', 'Uk::view/$1');
 
 // gets rid of index e.g. news => localNews/index
-$routes->get('localnews', 'localnews::index');
+$routes->get('local', 'Local::index');
+
+// shortens the url e.g. news/xyz => Local/view/xyz
+$routes->get('local/(:segment)', 'Local::view/$1');
 
 
 

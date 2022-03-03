@@ -1,26 +1,26 @@
 <?php
 namespace App\Controllers;
 	
-use App\Models\WorldNewsModel;
+use App\Models\WorldModel;
 
 // this is our controller
-class WorldNews extends BaseController {
+class World extends BaseController {
 		
 	// lists all news items
 	public function index() {
 		
 		// instantiate the model
-		$model = model(WorldNewsModel::class);
+		$model = model(WorldModel::class);
 		
 		// the data is stored in an object
 		$data = [
-			'worldNews' => $model->getWorldNews(), // get the news items
+			'world' => $model->getWorld(), // get the news items
 			'title' => 'World News', // page title
 		];
 		
 		// loads the views and passes the data objects
 		echo view('templates/worldNewsHeader', $data);
-		echo view('worldNews/worldNewsOverview', $data);
+		echo view('world/overview', $data);
 		echo view('templates/footer', $data);
 	}
 		 
@@ -28,22 +28,22 @@ class WorldNews extends BaseController {
 	public function view($slug = null) {
 		
 		// grab the model
-		$model = model(WorldNewsModel::class);
+		$model = model(WorldModel::class);
 		
 		// load single news item from model pass in the slug 
-		$data['worldNews'] = $model->getWorldNews($slug);
+		$data['world'] = $model->getWorld($slug);
 		
 		// deal with case where the slug doesn't exist
-		if(empty($data['worldNews'])){
+		if(empty($data['world'])){
 			throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the news item: ' . $slug);
 		}
 		
 		// specify the title
-		$data['title'] = $data['worldNews']['title'];
+		$data['title'] = $data['world']['title'];
 		
 		// loads the views and passes the data objects
 		echo view('templates/worldNewsHeader', $data);
-		echo view('worldNews/worldNewsView', $data);
+		echo view('world/view', $data);
 		echo view('templates/footer', $data);
 	}
 }

@@ -1,0 +1,1 @@
+<p><?= esc($world['body']) ?></p>

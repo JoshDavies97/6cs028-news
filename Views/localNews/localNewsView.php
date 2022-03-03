@@ -1,1 +1,0 @@
-<p><?= esc($localNews['body']) ?></p>

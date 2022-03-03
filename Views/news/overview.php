@@ -4,7 +4,7 @@
 
 <a href="<?=base_url()?>/news/create">Create Article</a><br /><br /> 
 
-<a href="<?=base_url()?>/index.php/localNews/index">Local News</a>
+<!--<a href="<?=base_url()?>/index.php/localNews/index">Local News</a> -->
 
 <?php if (! empty($news) && is_array($news)): ?>
 
