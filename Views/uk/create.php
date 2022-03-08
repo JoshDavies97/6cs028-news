@@ -12,13 +12,17 @@
 	<?= csrf_field() ?>
 	
 	<!--- title of article --->
-	<label for="title">Title</label>
-	<input type="input" name="title" /><br />
+	<div class="mb-3">
+		<label for="title" class="form-label">Title</label>
+		<input class="form-control "type="input" name="title" /><br />
+	</div>
 	
 	<!--- text of article --->
-	<label for="body">Text</label>
-	<textarea name="body" cols="45" rows="4"></textarea><br />
+	<div class="mb-3">
+		<label for="body" class="form-label">Text</label>
+		<textarea class="form-control name="body" cols="45" rows="4"></textarea><br />
+	</div>
 	
 	<!--- submit article button --->
-	<input type="submit" name="submit" value="Create news item" />
+	<input class="btn btn-primary" type="submit" name="submit" value="Create news item" />
 </form>	
