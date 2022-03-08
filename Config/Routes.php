@@ -39,10 +39,9 @@ $routes->get('/', 'Home::index');
 $routes->get('news', 'News::index');
 
 // shortens the url e.g. news/xyz => news/view/xyz
-$routes->get('news/(:segment)', 'News::view/$1');
-
 $routes->match(['get', 'post'], 'news/create', 'News::create');
 
+$routes->get('news/(:segment)', 'News::view/$1');
 
 // routes for local
 $routes->match(['get', 'post'], 'local/create', 'Local::create');

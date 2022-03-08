@@ -2,21 +2,27 @@
 
 <p id="ajaxArticle"></p>
 
-<a href="<?=base_url()?>/local/create">Create Article</a><br /><br /> 
+<a class="btn btn-primary mb-2 py-2" href="<?=base_url()?>/local/create">Create Article</a><br /><br /> 
 
 <?php if (! empty($local) && is_array($local)): ?>
 
+	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
 	<?php foreach ($local as $news_item): ?>
 	
-	<h3><?= esc($news_item['title']) ?></h3>
-	
-	<div class="main">
-		<?= esc($news_item['body']) ?>
-    </div>
-	
-	<p><a href="<?=base_url()?>/local/<?= esc($news_item['slug'], 'url') ?>">View article</a></p>
-	
-	<p><button onclick="getData('<?= esc($news_item['slug'], 'url') ?>')">View article via Ajax</button></p>
+		<div class="col">
+		<div class="card mb-2 h-100">
+			<div class="card-body">
+				<h5 class="card-title"><?= esc($news_item['title']) ?></h5>
+				<p class="card-text">
+			</div>
+		
+			<div class="card-footer">
+				<p><a href="<?=base_url()?>/local/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-primary">View article</a></p>
+				<p><button onclick="getData('<?= esc($news_item['slug'], 'url') ?>')">View article via Ajax</button></p>
+			</div>
+		</div>
+		</div>
 	
 	<?php endforeach ?>
 
