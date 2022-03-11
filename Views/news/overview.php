@@ -1,12 +1,14 @@
 <h2><?= esc($title) ?></h2>
 
-<p id="ajaxArticle"></p>
-
 <a class="btn btn-primary mb-2 py-2" href="<?=base_url()?>/news/create">Create Article</a><br /><br /> 
 
 <!--<a href="<?=base_url()?>/index.php/localNews/index">Local News</a> -->
 
 <?php if (! empty($news) && is_array($news)): ?>
+
+	<div id ="spin" class="spinner-border" role="status" style="visibility: hidden">
+		<span class="visually-hidden">Loading...</span>
+	</div>
 
 	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
 
@@ -17,6 +19,7 @@
 			<div class="card-body">
 				<h5 class="card-title"><?= esc($news_item['title']) ?></h5>
 				<p class="card-text">
+					<p id="ajaxArticle<?= esc($news_item['slug'], 'url') ?>"></p>
 			</div>
 			
 			<div class="card-footer">
@@ -43,9 +46,10 @@
 <script>
 	function getData(slug) {
 		
-		// add a loading spinner and a message
-		//document.getElementById["spin"].style.visibility = hidden
-		//
+		// show spinner
+		document.getElementById("spin").style.visibility = "visible";
+		document.getElementById("ajaxArticle" + slug).innerHTML = "Please Wait...";
+		
 		
 		// fetch data
 		fetch('http://mi-linux.wlv.ac.uk/~1827197/project-root/public/ajax/get/' + slug)
@@ -54,8 +58,11 @@
 		.then(response => response.json())
 		.then(response => {
 			
+			// hide spinner
+			document.getElementById("spin").style.visibility = "hidden";
+			
 			// copy one element of response to the HTML paragraph
-			document.getElementById("ajaxArticle").innerHTML = response.title + ": " + response.body;
+			document.getElementById("ajaxArticle" + slug).innerHTML = response.title + ": " + response.body;
 		})
 		
 		.catch(err => {
