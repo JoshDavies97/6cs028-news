@@ -13,5 +13,5 @@
 </head>
 <body>
 	<div class="container-md">
-		<?php echo view('templates/uknavbar'); ?>
+		<?php echo view('templates/localWeatherNavbar'); ?>
 		<h1><?= esc($title) ?></h1>
