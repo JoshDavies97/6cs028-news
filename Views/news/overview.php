@@ -28,12 +28,15 @@
 			</div>
 		</div>	
 		</div>
+	
 			
 		<!-- <a href="<?=base_url()?>/news/<?= esc($news_item['slug'], 'url') ?>">View article</a></p>  url that's needed when routing -->
 		
 	<!-- <p><a href="<?=base_url()?>/news/view/<?= esc($news_item['slug'], 'url') ?>">View article</a></p> url that's needed without routing -->
 
     <?php endforeach ?>
+	
+	</div>	
 
 <?php else: ?>
 

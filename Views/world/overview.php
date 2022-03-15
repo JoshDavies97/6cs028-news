@@ -28,6 +28,8 @@
 		</div>
 	
 	<?php endforeach ?>
+	
+	</div>
 
 <?php else: ?>
 

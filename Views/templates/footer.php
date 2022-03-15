@@ -1,3 +1,5 @@
+		<footer class="text-center text-md-start bg-primary text-light">
+	<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
 		<em>&copy; 2021</em>
 	</div>
 	
