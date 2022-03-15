@@ -1,17 +1,17 @@
 <body>
 	<div class="container">
 		<input type="text" id="city_name"> <button id="search" class="btn btn-primary">Search</button>
-		<p>City: <span id="city_p"></span></p>
-		<p>Weather: <span id="weather"></span></p>
-		<p>Wind Speed: <span id="wind"></span></p>
-		<p>Temperature: <span id="temp"></span></p>
+		<p><strong>City:</strong> <span id="city_p"></span>, <span id="country"></span></p>
+		<p><strong>Weather:</strong> <span id="weather"></span></p>
+		<p><strong>Wind Speed:</strong> <span id="wind"></span></p>
+		<p><strong>Temperature:</strong> <span id="temp"></span></p>
 		<img id="img_icon" src="">
 	</div>
 </body>
 
 <script>
 
-// button is clicked
+// get user's current location
 document.getElementById("search").addEventListener("click", fetch_weather);
 
 function fetch_weather() {
@@ -29,8 +29,10 @@ function fetch_weather() {
 			// display whole api in browser console
 			console.log(response);
 			
-			// city confrim check
+			// city and country confirm check
+			// copy city and country name
 			document.getElementById("city_p").innerHTML = response.name;
+			document.getElementById("country").innerHTML = response.sys.country;
 			
 			// copy weather description
 			document.getElementById("weather").innerHTML = response.weather[0].description;
@@ -41,7 +43,7 @@ function fetch_weather() {
 			// copy temperature
 			document.getElementById("temp").innerHTML = response.main.temp + '°C';
 			
-			// add icon
+			// add weather icon
 			var icon = response.weather[0].icon;
 			var icon_url = 'http://openweathermap.org/img/wn/' + icon + '@4x.png'
 			
