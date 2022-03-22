@@ -23,17 +23,14 @@
 			</div>
 			
 			<div class="card-footer">
-				<a href="<?=base_url()?>/news/<?= esc($news_item['slug'], 'url') ?>" class=" btn btn-primary">View article</a><br /><br />
-				<a><button onclick="getData('<?= esc($news_item['slug'], 'url') ?>')" class="btn btn-secondary">View article via Ajax</button></a><br /><br />
-				<p><a href="<?=base_url()?>/news/delete/<?= esc($news_item['slug'], 'url') ?>" class=" btn btn-danger">Delete article</a>
+				<div class="btn-group">
+					<a href="<?=base_url()?>/news/<?= esc($news_item['slug'], 'url') ?>" class=" btn btn-primary">View article</a>
+					<button onclick="getData('<?= esc($news_item['slug'], 'url') ?>')" class="btn btn-secondary">View article via Ajax</button>
+					<a href="<?=base_url()?>/news/delete/<?= esc($news_item['slug'], 'url') ?>" class=" btn btn-danger">Delete article</a>
+				</div>	
 			</div>
 		</div>	
 		</div>
-	
-			
-		<!-- <a href="<?=base_url()?>/news/<?= esc($news_item['slug'], 'url') ?>">View article</a></p>  url that's needed when routing -->
-		
-	<!-- <p><a href="<?=base_url()?>/news/view/<?= esc($news_item['slug'], 'url') ?>">View article</a></p> url that's needed without routing -->
 
     <?php endforeach ?>
 	

@@ -21,9 +21,11 @@
 			</div>
 	
 			<div class="card-footer">
-				<p><a href="<?=base_url()?>/world/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-primary">View article</a></p>
-				<a><button onclick="getData('<?= esc($news_item['slug'], 'url') ?>')" class="btn btn-secondary">View article via Ajax</button></a><br /><br />
-				<p><a href="<?=base_url()?>/world/delete/<?= esc($news_item['slug'], 'url') ?>" class=" btn btn-danger">Delete article</a>
+				<div class="btn-group">
+					<a href="<?=base_url()?>/world/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-primary">View article</a>
+					<button onclick="getData('<?= esc($news_item['slug'], 'url') ?>')" class="btn btn-secondary">View article via Ajax</button>
+					<a href="<?=base_url()?>/world/delete/<?= esc($news_item['slug'], 'url') ?>" class=" btn btn-danger">Delete article</a>
+				</div>	
 			</div>
 		</div>
 		</div>

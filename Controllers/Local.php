@@ -15,6 +15,9 @@ class Local extends BaseController {
 		
 		// delete item via model
 		$model->deleteNews($slug);
+		
+		// redirect to home screen if an article is deleted
+		return redirect()->to('local');
 	}
 		
 	// lists all news items

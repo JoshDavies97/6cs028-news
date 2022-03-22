@@ -15,6 +15,9 @@ class News extends BaseController {
 		
 		// delete item via model
 		$model->deleteNews($slug);
+		
+		// redirect to home screen if an article is deleted
+		return redirect()->to('news');
 	}
 		
 	// lists all news items
