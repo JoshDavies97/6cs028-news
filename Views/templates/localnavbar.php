@@ -7,13 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a <a class="nav-link active" href="<?=base_url()?>/local/">Local News</a>
+		  <a class="nav-link active" href="<?=base_url()?>/world/">World News</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="<?=base_url()?>/uk/">UK News</a>
         </li>
 		<li class="nav-item">
-		  <a class="nav-link active" href="<?=base_url()?>/world/">World News</a>
+		  <a <a class="nav-link active" href="<?=base_url()?>/local/">Local News</a>
+        </li>
+		<li class="nav-item">
+		  <a class="nav-link active" href="<?=base_url()?>/apis/worldweather/">World Weather</a>
+        </li>
+		<li class="nav-item">
+		  <a class="nav-link active" href="<?=base_url()?>/apis/localweather/">Local Weather</a>
         </li>
       </ul>
       <form class="d-flex">

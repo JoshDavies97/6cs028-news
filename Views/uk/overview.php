@@ -47,7 +47,7 @@
 		document.getElementById("ajaxArticle" + slug).innerHTML = "Please Wait...";
 		
 		// fetch data
-		fetch('http://mi-linux.wlv.ac.uk/~1827197/project-root/public/ukajax/get/' + slug)
+		fetch('https://mi-linux.wlv.ac.uk/~1827197/project-root/public/ukajax/get/' + slug)
 		
 		// convert response string to json object
 		.then(response => response.json())
