@@ -5,6 +5,17 @@ use App\Models\LocalModel;
 
 // this is our controller
 class Local extends BaseController {
+	
+	// deletes an item
+	public function delete($slug) {
+		print("Delete news items: ".$slug);
+		
+		// grab the model
+		$model = model(LocalModel::class);
+		
+		// delete item via model
+		$model->deleteNews($slug);
+	}
 		
 	// lists all news items
 	public function index() {

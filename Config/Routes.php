@@ -43,11 +43,12 @@ $routes->match(['get', 'post'], 'news/create', 'News::create');
 
 $routes->get('news/(:segment)', 'News::view/$1');
 
-// routes for local
-$routes->match(['get', 'post'], 'local/create', 'Local::create');
 
 // gets rid of index e.g. news => local/index
 $routes->get('local', 'Local::index');
+
+// routes for local
+$routes->match(['get', 'post'], 'local/create', 'Local::create');
 
 // shortens the url e.g. news/xyz => Local/view/xyz
 $routes->get('local/(:segment)', 'Local::view/$1');

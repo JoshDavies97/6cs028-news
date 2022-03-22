@@ -19,7 +19,7 @@
 	
 	<!--- text of article --->
 	<div class="mb-3">
-		<label for="body" class="form-label">Text</label>
+		<label for="body" class="form-label">Body</label>
 		<textarea class="form-control name="body" cols="45" rows="4"></textarea><br />
 	</div>
 	

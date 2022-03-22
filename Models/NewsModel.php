@@ -20,5 +20,11 @@ class NewsModel extends Model {
 		// if slug is provided, select it
 		return $this->where(['slug'=>$slug])->first();
 	}
+	
+	public function deleteNews($slug) {
+		$db = \Config\Database::connect();
+		$builder = $db->table('News');
+		$builder->delete(['slug' => $slug]);
+	}
 }
 ?>

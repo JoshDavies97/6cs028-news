@@ -24,7 +24,8 @@
 			
 			<div class="card-footer">
 				<a href="<?=base_url()?>/news/<?= esc($news_item['slug'], 'url') ?>" class=" btn btn-primary">View article</a><br /><br />
-				<a><button onclick="getData('<?= esc($news_item['slug'], 'url') ?>')">View article via Ajax</button></a>
+				<a><button onclick="getData('<?= esc($news_item['slug'], 'url') ?>')" class="btn btn-secondary">View article via Ajax</button></a><br /><br />
+				<p><a href="<?=base_url()?>/news/delete/<?= esc($news_item['slug'], 'url') ?>" class=" btn btn-danger">Delete article</a>
 			</div>
 		</div>	
 		</div>

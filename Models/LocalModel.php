@@ -17,6 +17,12 @@ class LocalModel extends Model {
 		// if slug is provided, select it
 		return $this->where(['slug' => $slug])->first();
 	}
+	
+	public function deleteNews($slug) {
+		$db = \Config\Database::connect();
+		$builder = $db->table('Local');
+		$builder->delete(['slug' => $slug]);
+	}
 }
 ?>
 

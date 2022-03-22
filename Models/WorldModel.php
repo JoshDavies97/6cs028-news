@@ -19,5 +19,11 @@ class WorldModel extends Model {
 		// if slug is provided, select it
 		return $this->where(['slug' => $slug])->first();
 	}
+	
+	public function deleteNews($slug) {
+		$db = \Config\Database::connect();
+		$builder = $db->table('World');
+		$builder->delete(['slug' => $slug]);
+	}
 }
 ?>

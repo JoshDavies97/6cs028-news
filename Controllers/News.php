@@ -5,6 +5,17 @@ use App\Models\NewsModel;
 
 // this is our controller
 class News extends BaseController {
+	
+	// deletes an item
+	public function delete($slug) {
+		print("Delete news items: ".$slug);
+		
+		// grab the model
+		$model = model(NewsModel::class);
+		
+		// delete item via model
+		$model->deleteNews($slug);
+	}
 		
 	// lists all news items
 	public function index() {

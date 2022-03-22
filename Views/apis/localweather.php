@@ -8,7 +8,7 @@
 	</div>
 </body>
 
-<script>
+<script> 
 
 // get user's current location from browser api 
 navigator.geolocation.getCurrentPosition(fetch_weather);

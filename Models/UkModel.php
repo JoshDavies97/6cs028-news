@@ -17,5 +17,11 @@ class UkModel extends Model {
 		// if slug is provided, select it
 		return $this->where(['slug' => $slug])->first();
 	}
+	
+	public function deleteNews($slug) {
+		$db = \Config\Database::connect();
+		$builder = $db->table('Uk');
+		$builder->delete(['slug' => $slug]);
+	}
 }
 ?>
