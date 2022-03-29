@@ -1,4 +1,5 @@
 <!-- view for world -->
+<!-- view shows the article body and image -->
 
 <div class="mb-2">	
 	<p><?= esc($world['body']) ?></p>

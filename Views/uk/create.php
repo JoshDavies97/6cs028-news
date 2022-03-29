@@ -23,6 +23,12 @@
 		<textarea class="form-control" name="body" cols="45" rows="4"></textarea><br />
 	</div>
 	
+	<!--- article image --->
+	<div class="mb-3">
+		<label for="title" class="form-label">Image</label>
+		<input class="form-control "type="input" name="image" /><br />
+	</div>
+	
 	<!--- submit article button --->
 	<input class="btn btn-primary" type="submit" name="submit" value="Create news item" />
 </form>	

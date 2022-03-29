@@ -71,12 +71,14 @@ class Local extends BaseController {
 		if($this->request->getMethod() === 'post' && $this->validate([
 			'title' => 'required|min_length[3]|max_length[255]',
 			'body' => 'required',
+			'image' => 'required',
 		])) {
 				// data from form is only saved to the database if the validation rules have been met
 				$model->save([
 					'title' => $this->request->getPost('title'),
 					'slug' => url_title($this->request->getPost('title'), '-', true),
 					'body' => $this->request->getPost('body'),
+					'image' => $this->request->getPost('image'),
 				]);
 				
 				// redirect to home screen if a new article is created

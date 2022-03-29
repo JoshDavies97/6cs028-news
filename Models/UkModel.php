@@ -7,7 +7,7 @@ class UkModel extends Model {
 	protected $table = 'Uk'; // 'Uk' = name of database table
 	
 	// the fields inside the table the model is allowed to update
-	protected $allowedFields = ['title', 'slug', 'body'];
+	protected $allowedFields = ['title', 'slug', 'body', 'image'];
 	
 	public function getUk($slug = false) {
 		if($slug === false) {

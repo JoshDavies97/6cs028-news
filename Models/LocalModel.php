@@ -7,7 +7,7 @@ class LocalModel extends Model {
 	protected $table = 'Local'; // 'Local' = name of database table
 	
 	// the fields inside the table the model is allowed to update
-	protected $allowedFields = ['title', 'slug', 'body'];
+	protected $allowedFields = ['title', 'slug', 'body', 'image'];
 	
 	public function getLocal($slug = false) {
 		if($slug === false) {
