@@ -1,4 +1,6 @@
 <!-- view for world -->
 
-<p><?= esc($world['body']) ?></p>
-<img src=<?=esc($world['image'])?> height="300" width="300">
+<div class="mb-2">	
+	<p><?= esc($world['body']) ?></p>
+	<img src="<?=base_url()?>/<?=esc($world['image'])?>"width="50%" class="img-fluid rounded mx-auto d-block">
+</div>	
