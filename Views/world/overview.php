@@ -3,6 +3,12 @@
 <a class="btn btn-primary mb-2 py-2" href="<?=base_url()?>/world/create">Create Article</a><br /><br /> 
 
 <?php if (! empty($world) && is_array($world)): ?>
+	
+	<?php if($message == 1):?>
+		<div class="alert alert-success" id="ajaxArticle" role="alert">Article Added</div>
+	<?php elseif($message == 2):?>
+		<div class="alert alert-danger" id="ajaxArticle" role="alert">Article Deleted</div>
+	<?php endif;?>
 
 	<div id ="spin" class="spinner-border" role="status" style="visibility: hidden">
 		<span class="visually-hidden">Loading...</span>
