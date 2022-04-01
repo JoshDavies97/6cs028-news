@@ -6,8 +6,52 @@
 	
 	<?php if($message == 1):?>
 		<div class="alert alert-success" id="ajaxArticle" role="alert">Article Added</div>
+		<script>
+			// Let's check if the browser supports notifications
+			if (!("Notification" in window)) {
+				alert("This browser does not support desktop notification");
+			}
+
+			// Let's check whether notification permissions have already been granted
+			else if (Notification.permission === "granted") {
+				// If it's okay let's create a notification
+				var notification = new Notification("Article added!");
+			}
+
+			// Otherwise, we need to ask the user for permission
+			else if (Notification.permission !== "denied") {
+				Notification.requestPermission().then(function (permission) {
+					// If the user accepts, let's create a notification
+					if (permission === "granted") {
+					var notification = new Notification("Article added!");
+				}
+			});
+		}
+		</script>
 	<?php elseif($message == 2):?>
 		<div class="alert alert-danger" id="ajaxArticle" role="alert">Article Deleted</div>
+		<script>
+			// Let's check if the browser supports notifications
+			if (!("Notification" in window)) {
+				alert("This browser does not support desktop notification");
+			}
+
+			// Let's check whether notification permissions have already been granted
+			else if (Notification.permission === "granted") {
+				// If it's okay let's create a notification
+				var notification = new Notification("Article deleted!");
+			}
+
+			// Otherwise, we need to ask the user for permission
+			else if (Notification.permission !== "denied") {
+				Notification.requestPermission().then(function (permission) {
+					// If the user accepts, let's create a notification
+					if (permission === "granted") {
+					var notification = new Notification("Article deleted!");
+				}
+			});
+		}
+		</script>
 	<?php endif;?>
 
 	<div id ="spin" class="spinner-border" role="status" style="visibility: hidden">
