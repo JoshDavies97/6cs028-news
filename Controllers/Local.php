@@ -17,11 +17,11 @@ class Local extends BaseController {
 		$model->deleteNews($slug);
 		
 		// redirect to home screen if an article is deleted
-		return redirect()->to('local');
+		return redirect()->to('local/index/2');
 	}
 		
 	// lists all news items
-	public function index() {
+	public function index($message = '') {
 		
 		// instantiate the model
 		$model = model(LocalModel::class);
@@ -30,6 +30,7 @@ class Local extends BaseController {
 		$data = [
 			'local' => $model->getLocal(), // get the news items
 			'title' => 'Local News', // page title
+			'message' => $message,
 		];
 		
 		// loads the views and passes the data objects
@@ -71,7 +72,6 @@ class Local extends BaseController {
 		if($this->request->getMethod() === 'post' && $this->validate([
 			'title' => 'required|min_length[3]|max_length[255]',
 			'body' => 'required',
-			'image' => 'required',
 		])) {
 				// data from form is only saved to the database if the validation rules have been met
 				$model->save([
@@ -82,7 +82,7 @@ class Local extends BaseController {
 				]);
 				
 				// redirect to home screen if a new article is created
-				return redirect()->to('local');
+				return redirect()->to('local/index/1');
 				
 		// this is called before the form is submitted		
 		} else {
