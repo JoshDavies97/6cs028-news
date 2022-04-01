@@ -47,6 +47,27 @@ function fetch_weather(position) {
 			var icon = response.weather[0].icon;
 			var icon_url = 'https://openweathermap.org/img/wn/' + icon + '@4x.png'
 			document.getElementById("img_icon").src = icon_url;
+			
+			// Let's check if the browser supports notifications
+			if (!("Notification" in window)) {
+				alert("This browser does not support notifications");
+			}
+
+			// Let's check whether notification permissions have already been granted
+			else if (Notification.permission === "granted") {
+				// notification created if location is found
+				var notification = new Notification("Location found!");
+			}
+
+			// ask for permission to use notifications
+			else if (Notification.permission !== "denied") {
+				Notification.requestPermission().then(function (permission) {
+					// create a notification if granted permission
+					if (permission === "granted") {
+					var notification = new Notification("Location found!");
+				}
+			});
+		}
 		})
 		.catch(err => {
 			
